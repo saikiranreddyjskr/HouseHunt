@@ -132,3 +132,32 @@ Seeding the database creates the following accounts (all passwords are `password
 - **Protected Endpoints**: Verified Route wrappers using JSON Web Tokens (JWT).
 - **Helmet Headers**: Configured HTTP response headers for security protection.
 - **CORS Protection**: Access verification limiting queries to registered client domains.
+
+
+## 🚀 How to Run the Project Locally
+
+### Terminal 1 – Backend Setup
+
+```bash
+cd server
+npm install
+npm run dev
+```
+
+### Terminal 2 – Frontend Setup
+
+Open a new terminal and run:
+
+```bash
+cd client
+npm install
+npm start
+```
+
+## 🌐 Local Application URL
+
+After both terminals are running, open your browser and visit:
+
+```
+http://localhost:3000
+```
