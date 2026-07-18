@@ -75,15 +75,14 @@ smartbridge/
    ```bash
    npm install
    ```
-3. Configure the environment variables. The `.env` file is already created for local development with defaults:
+3.  3. Create a `.env` file inside the `server` folder with the following values:
    ```env
    PORT=5000
-   MONGODB_URI=mongodb://127.0.0.1:27017/househunt
-   JWT_SECRET=super_secret_key_12345_househunt
-   JWT_EXPIRE=30d
-   NODE_ENV=development
-   CLIENT_URL=http://localhost:5173
-   ```
+MONGODB_URI=mongodb://127.0.0.1:27017/househunt
+JWT_SECRET=your_secret_key_here
+JWT_EXPIRE=30d
+NODE_ENV=development
+CLIENT_URL=http://localhost:5173
 4. **Seed the database** to pre-populate sample data (Admins, Landlords, Renters, active properties, messaging logs, and reviews):
    ```bash
    node utils/seed.js
@@ -98,14 +97,18 @@ smartbridge/
 
 ### Step 2: Frontend Setup
 1. Open a new terminal window and navigate to the frontend folder:
-   ```bash
+```bash
    cd client
-   ```
-2. Install the frontend dependencies:
-   ```bash
+```
+2. Create a `.env` file inside the `client` folder with:
+```env
+   VITE_API_URL=http://localhost:5000
+```
+3. Install the frontend dependencies:
+```bash
    npm install
-   ```
-3. Boot up the Vite developer environment:
+```
+4. Boot up the Vite developer environment:
    ```bash
    npm start
    ```
@@ -159,5 +162,5 @@ npm start
 After both terminals are running, open your browser and visit:
 
 ```
-http://localhost:3000
+ http://localhost:5173
 ```
