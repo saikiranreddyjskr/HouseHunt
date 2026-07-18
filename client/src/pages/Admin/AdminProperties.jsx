@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import api from '../../utils/api';
+import api, { SERVER_URL } from '../../utils/api';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import { toast } from 'react-toastify';
 import { FiHome, FiCheck, FiX, FiTrash2, FiEye } from 'react-icons/fi';
@@ -93,7 +93,7 @@ const AdminProperties = () => {
                       <div className="d-flex align-items-center gap-3">
                         <div className="rounded overflow-hidden flex-shrink-0" style={{ width: '55px', height: '40px', background: '#e2e8f0' }}>
                           <img
-                            src={p.images && p.images.length > 0 ? `http://localhost:5000${p.images[0]}` : 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=60&q=80'}
+                            src={p.images && p.images.length > 0 ? ` ${SERVER_URL}${p.images[0]}` : 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=60&q=80'}
                             alt="Property thumbnail"
                             className="w-100 h-100 object-fit-cover"
                           />

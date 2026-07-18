@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
+import { SERVER_URL } from '../../utils/api';
 import { toast } from 'react-toastify';
 import { FiUser, FiPhone, FiMapPin, FiInfo, FiLock } from 'react-icons/fi';
 
@@ -120,7 +121,7 @@ const Profile = () => {
                 >
                   {user.profilePicture ? (
                     <img
-                      src={`http://localhost:5000${user.profilePicture}`}
+                      src={` ${SERVER_URL}${user.profilePicture}`}
                       alt="Current profile pic"
                       className="rounded-circle w-100 h-100 object-fit-cover"
                     />

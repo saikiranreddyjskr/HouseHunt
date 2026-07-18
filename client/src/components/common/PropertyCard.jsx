@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
-import api from '../../utils/api';
+import api, { SERVER_URL } from '../../utils/api';
 import { toast } from 'react-toastify';
 import { FiHeart, FiMapPin, FiMaximize } from 'react-icons/fi';
 import { BiBed, BiBath } from 'react-icons/bi';
@@ -39,7 +39,7 @@ const PropertyCard = ({ property, isInitiallyFavorited = false, onFavoriteToggle
   };
 
   const imageUrl = property.images && property.images.length > 0
-    ? `http://localhost:5000${property.images[0]}`
+     ? `${SERVER_URL}${property.images[0]}`
     : 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80';
 
   return (

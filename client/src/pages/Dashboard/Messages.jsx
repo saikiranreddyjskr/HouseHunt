@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
-import api from '../../utils/api';
+ import api, { SERVER_URL } from '../../utils/api';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import { toast } from 'react-toastify';
 import { FiSend, FiMessageSquare, FiUser, FiInfo } from 'react-icons/fi';
@@ -134,7 +134,7 @@ const Messages = () => {
                       >
                         {c.user.profilePicture ? (
                           <img
-                            src={`http://localhost:5000${c.user.profilePicture}`}
+                            src={` ${SERVER_URL}${c.user.profilePicture}`}
                             alt="avatar"
                             className="rounded-circle w-100 h-100 object-fit-cover"
                           />
@@ -172,7 +172,7 @@ const Messages = () => {
                     <div className="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold" style={{ width: '40px', height: '40px' }}>
                       {activeChat.profilePicture ? (
                         <img
-                          src={`http://localhost:5000${activeChat.profilePicture}`}
+                          src={` ${SERVER_URL}${activeChat.profilePicture}`}
                           alt="active avatar"
                           className="rounded-circle w-100 h-100 object-fit-cover"
                         />

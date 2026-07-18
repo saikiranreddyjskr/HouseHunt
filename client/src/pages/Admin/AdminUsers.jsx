@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../../utils/api';
+ import api, { SERVER_URL } from '../../utils/api';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import { toast } from 'react-toastify';
 import { FiUsers, FiUserCheck, FiUserX, FiShield } from 'react-icons/fi';
@@ -71,7 +71,7 @@ const AdminUsers = () => {
                     <div className="d-flex align-items-center gap-3">
                       <div className="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold" style={{ width: '40px', height: '40px' }}>
                         {u.profilePicture ? (
-                          <img src={`http://localhost:5000${u.profilePicture}`} alt="Avatar" className="rounded-circle w-100 h-100 object-fit-cover" />
+                          <img src={` ${SERVER_URL}${u.profilePicture}`} alt="Avatar" className="rounded-circle w-100 h-100 object-fit-cover" />
                         ) : (
                           u.name[0]
                         )}

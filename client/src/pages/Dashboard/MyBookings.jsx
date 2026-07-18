@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../../utils/api';
+import api, { SERVER_URL } from '../../utils/api';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import { toast } from 'react-toastify';
 import { FiCheck, FiX, FiTrash2, FiBookOpen, FiAlertCircle } from 'react-icons/fi';
@@ -122,7 +122,7 @@ const MyBookings = () => {
                         <div className="d-flex align-items-center gap-2.5">
                           <div className="rounded overflow-hidden flex-shrink-0" style={{ width: '50px', height: '38px', background: '#e2e8f0' }}>
                             <img
-                              src={b.property?.images && b.property.images.length > 0 ? `http://localhost:5000${b.property.images[0]}` : 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=60&q=80'}
+                              src={b.property?.images && b.property.images.length > 0 ? ` ${SERVER_URL}${b.property.images[0]}` : 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=60&q=80'}
                               alt="Property"
                               className="w-100 h-100 object-fit-cover"
                             />

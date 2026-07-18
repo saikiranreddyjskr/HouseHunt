@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { SERVER_URL } from '../../utils/api';
 
 const PropertyGallery = ({ images }) => {
   const defaultPlaceholder = 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80';
@@ -6,7 +7,7 @@ const PropertyGallery = ({ images }) => {
   const [activeImage, setActiveImage] = useState(displayImages[0]);
 
   const getFullUrl = (img) => {
-    return img.startsWith('http') ? img : `http://localhost:5000${img}`;
+  return img.startsWith('http') ? img : `${SERVER_URL}${img}`;
   };
 
   return (

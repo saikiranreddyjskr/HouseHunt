@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
+import { SERVER_URL } from '../../utils/api';
 import {
   FiSun,
   FiMoon,
@@ -82,7 +83,7 @@ const Navbar = () => {
                   >
                     {user.profilePicture ? (
                       <img
-                        src={`http://localhost:5000${user.profilePicture}`}
+                        src={`${SERVER_URL}${user.profilePicture}`}
                         alt="Profile"
                         className="rounded-circle"
                         style={{ width: '28px', height: '28px', objectFit: 'cover' }}

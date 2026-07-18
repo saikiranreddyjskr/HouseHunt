@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
-import api from '../../utils/api';
+ import api, { SERVER_URL } from '../../utils/api';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import { toast } from 'react-toastify';
 import { FiHome, FiEdit, FiTrash2, FiEye, FiPlus } from 'react-icons/fi';
@@ -88,7 +88,7 @@ const MyProperties = () => {
                       <div className="d-flex align-items-center gap-3">
                         <div className="rounded overflow-hidden flex-shrink-0" style={{ width: '60px', height: '45px', background: '#e2e8f0' }}>
                           <img
-                            src={p.images && p.images.length > 0 ? `http://localhost:5000${p.images[0]}` : 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=80&q=80'}
+                            src={p.images && p.images.length > 0 ? ` ${SERVER_URL}${p.images[0]}` : 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=80&q=80'}
                             alt="Property miniature"
                             className="w-100 h-100 object-fit-cover"
                           />

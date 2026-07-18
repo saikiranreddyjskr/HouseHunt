@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { AuthProvider, AuthContext } from './context/AuthContext';
+import { SERVER_URL } from './utils/api';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -99,7 +100,7 @@ const UserDashboardLayout = () => {
                   style={{ width: '60px', height: '60px', fontSize: '1.5rem' }}
                 >
                   {user && user.profilePicture ? (
-                    <img src={`http://localhost:5000${user.profilePicture}`} alt="Avatar" className="rounded-circle w-100 h-100 object-fit-cover" />
+                      <img src={`${SERVER_URL}${user.profilePicture}`} alt="Avatar" className="rounded-circle w-100 h-100 object-fit-cover" />
                   ) : (
                     user ? user.name[0] : 'U'
                   )}

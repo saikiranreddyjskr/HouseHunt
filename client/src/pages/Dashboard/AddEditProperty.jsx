@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import api from '../../utils/api';
+ import api, { SERVER_URL } from '../../utils/api';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import { toast } from 'react-toastify';
 import { FiHome, FiImage, FiPlus, FiTrash2, FiInfo } from 'react-icons/fi';
@@ -353,7 +353,7 @@ const AddEditProperty = () => {
                     <div className="d-flex flex-wrap gap-1.5 mb-2">
                       {existingImages.map((img, i) => (
                         <div key={i} className="rounded border overflow-hidden" style={{ width: '50px', height: '40px' }}>
-                          <img src={`http://localhost:5000${img}`} alt="Preview" className="w-100 h-100 object-fit-cover" />
+                          <img src={` ${SERVER_URL}${img}`} alt="Preview" className="w-100 h-100 object-fit-cover" />
                         </div>
                       ))}
                     </div>

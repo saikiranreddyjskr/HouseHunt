@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import api from '../utils/api';
+import api, { SERVER_URL } from '../utils/api';
 import PropertyGallery from '../components/property/PropertyGallery';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import PropertyCard from '../components/common/PropertyCard';
@@ -262,7 +262,7 @@ const PropertyDetails = () => {
               >
                 {property.owner.profilePicture ? (
                   <img
-                    src={`http://localhost:5000${property.owner.profilePicture}`}
+                    src={` ${SERVER_URL}${property.owner.profilePicture}`}
                     alt="Owner profile"
                     className="rounded-circle w-100 h-100 object-fit-cover"
                   />
